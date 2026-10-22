@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Melisa & Kerem - Nişan Davetiyesi</title>
+  <title>Melisa & amit - Nişan Davetiyesi</title>
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -48,6 +48,39 @@
   </script>
 
   <style>
+
+    * {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+img, video, iframe {
+  max-width: 100%;
+}
+
+.container {
+  width: min(100% - 32px, 1200px);
+  margin-inline: auto;
+}
+
+@media (max-width: 767px) {
+  .container {
+    width: calc(100% - 24px);
+  }
+
+  h1 {
+    font-size: clamp(1.8rem, 8vw, 3rem);
+  }
+
+  button {
+    max-width: 100%;
+  }
+}
     body {
       background-color: #0d0806;
       font-family: 'Montserrat', sans-serif;
@@ -74,12 +107,12 @@
 
     .door-left {
       transform-origin: left center;
-      transition: transform 2s cubic-bezier(0.77, 0, 0.175, 1);
+      transition: transform 5s cubic-bezier(0.77, 0, 0.175, 1);
     }
 
     .door-right {
       transform-origin: right center;
-      transition: transform 2s cubic-bezier(0.77, 0, 0.175, 1);
+      transition: transform 5s cubic-bezier(0.77, 0, 0.175, 1);
     }
 
     .doors-open .door-left {
@@ -137,10 +170,9 @@
   <div class="relative w-full max-w-[430px] h-[100vh] sm:h-[890px] bg-creamBg sm:rounded-[44px] shadow-2xl overflow-hidden flex flex-col border-0 sm:border-[8px] border-[#2A1E19]">
 
     <!-- AUDIO PLAYER -->
-    <audio id="bg-music" loop preload="auto">
-      <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=wedding-piano-112624.mp3" type="audio/mpeg">
-    </audio>
-
+<audio id="bgMusic" loop preload="auto">
+  <source src="song.mp3" type="audio/mpeg">
+</audio>
     <!-- SPARKLE PARTICLES OVERLAY CANVAS -->
     <canvas id="sparkle-canvas"></canvas>
 
@@ -202,9 +234,9 @@
         <div class="w-28 h-36 bg-creamCard rounded-full shadow-crest border-2 border-goldAccent flex flex-col items-center justify-center p-2 text-center pulse-crest backdrop-blur-md">
           <div class="w-full h-full rounded-full border border-burgundy/40 flex flex-col items-center justify-center p-2 bg-gradient-to-b from-creamCard via-creamBg to-[#EFE4D6]">
             <div class="w-9 h-9 rounded-full bg-burgundy flex items-center justify-center text-goldAccent mb-1 shadow-md">
-              <span class="font-serif text-sm font-bold tracking-widest">M&amp;K</span>
+              <span class="font-serif text-sm font-bold tracking-widest">M&amp;A</span>
             </div>
-            <span class="font-playfair text-[11px] font-bold tracking-wider text-burgundy">MELİSA &amp; KEREM</span>
+            <span class="font-playfair text-[11px] font-bold tracking-wider text-burgundy">MELİSA &amp; amit</span>
             <span data-i18n="tapToOpen" class="text-[7.5px] tracking-widest uppercase text-goldDark mt-1.5 font-bold animate-pulse">DOKUNUN &amp; AÇIN</span>
           </div>
         </div>
@@ -244,7 +276,7 @@
             </h1>
             <div class="font-script text-3xl sm:text-4xl text-goldDark my-1">&amp;</div>
             <h1 class="font-serif text-4xl sm:text-5xl text-burgundy font-normal tracking-wide leading-tight drop-shadow-sm">
-              Kerem
+              amit
             </h1>
 
             <div class="pt-4 flex flex-col items-center justify-center space-y-1">
