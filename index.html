@@ -56,6 +56,8 @@
 body {
   margin: 0;
   width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
   overflow-x: hidden;
 }
 
@@ -82,8 +84,10 @@ img, video, iframe {
   }
 }
     body {
-      background-color: #0d0806;
+      background-color: #F5EFE6;
       font-family: 'Montserrat', sans-serif;
+      min-height: 100vh;
+      min-height: 100dvh;
       overflow-x: hidden;
       user-select: none;
     }
@@ -164,10 +168,10 @@ img, video, iframe {
     }
   </style>
 </head>
-<body class="flex justify-center items-center min-h-screen p-0 sm:p-4 text-deepText">
+<body class="min-h-screen min-h-[100dvh] w-full p-0 text-deepText">
 
   <!-- Mobile Frame Canvas Container -->
-  <div class="relative w-full max-w-[430px] h-[100vh] sm:h-[890px] bg-creamBg sm:rounded-[44px] shadow-2xl overflow-hidden flex flex-col border-0 sm:border-[8px] border-[#2A1E19]">
+  <div class="relative w-full h-[100vh] h-[100dvh] bg-creamBg overflow-hidden flex flex-col">
 
     <!-- AUDIO PLAYER -->
 <audio id="bgMusic" loop preload="auto">
