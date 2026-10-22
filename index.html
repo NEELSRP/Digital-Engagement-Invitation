@@ -657,6 +657,13 @@ img, video, iframe {
       const now = new Date().getTime();
       const difference = targetDate - now;
 
+      if (difference <= 0) {
+        ["days", "hours", "minutes", "seconds"].forEach(id => {
+          document.getElementById(id).innerText = "00";
+        });
+        return;
+      }
+
       if (difference > 0) {
         const days = Math.floor(difference / (1000 * 60 * 60 * 24));
         const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -676,7 +683,7 @@ img, video, iframe {
     function openInvitation() {
       const overlay = document.getElementById('door-overlay');
       const topControls = document.getElementById('top-controls');
-      const audio = document.getElementById('bg-music');
+      const audio = document.getElementById('bgMusic');
 
       overlay.classList.add('doors-open');
 
@@ -697,7 +704,7 @@ img, video, iframe {
     }
 
     function toggleMusic() {
-      const audio = document.getElementById('bg-music');
+      const audio = document.getElementById('bgMusic');
       const icon = document.getElementById('music-icon');
 
       if (isMusicPlaying) {
@@ -705,9 +712,13 @@ img, video, iframe {
         isMusicPlaying = false;
         icon.className = "fas fa-volume-mute text-xs text-gray-400";
       } else {
-        audio.play();
-        isMusicPlaying = true;
-        icon.className = "fas fa-music text-xs text-burgundy";
+        audio.play().then(() => {
+          isMusicPlaying = true;
+          icon.className = "fas fa-music text-xs text-burgundy";
+        }).catch(err => {
+          isMusicPlaying = false;
+          console.log("Audio playback unavailable:", err);
+        });
       }
     }
 
